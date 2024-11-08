@@ -13,20 +13,43 @@ Description
 # Packages -------------------------------------------------------------------
 
 import os
+import subprocess
 import pandas as pd
 import xml.etree.ElementTree as ET
 
+
+# Modules --------------------------------------------------------------------
+
+# def extract_data_export():
+#     return
+#
+# def parse_weight_data():
+#     return
+#
+# def main():
+#     return
 
 # Main -----------------------------------------------------------------------
 
 if __name__ == '__main__':
 
     # Base directory
-    base_dir = '/Users/Antoine/Documents/Health/Data'
-    
+    base_dir = '/Users/Antoine/Documents/Health/AppleHealth/'
+
+    # Data directory
+    data_dir = 'data/'
+
+    # Apple Health data export
+    apple_export = 'export.zip'
+    apple_export = os.path.join(data_dir, apple_export)
+
+    # Extract Apple Health export
+    subprocess.run(['unzip', '-f', apple_export, '-d', data_dir])
+    # subprocess.run(['unzip', apple_export, '-d', data_dir])
+
     # Input and output directories
-    input_dir = 'data/apple_health_export/'
-    output_dir = 'data/'
+    input_dir = os.path.join(data_dir, 'apple_health_export')
+    output_dir = data_dir
 
     # Prepend base directory
     input_dir = os.path.join(base_dir, input_dir)
@@ -73,6 +96,6 @@ if __name__ == '__main__':
 
     record_types_all = [node.get('type') for node in health_root.iter('Record')]
 
-    dietary_records = [record for record in ]
-    dietary_types = [record for record in record_types_unique if 'Dietary' in record]
-    dietary_types
+    # dietary_records = [record for record in ]
+    # dietary_types = [record for record in record_types_unique if 'Dietary' in record]
+    # dietary_types
