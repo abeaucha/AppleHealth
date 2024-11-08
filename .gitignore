@@ -2,3 +2,5 @@
 .idea/
 .ipynb_checkpoints/
 .venv/
+data/
+apple_health_weight.csv
