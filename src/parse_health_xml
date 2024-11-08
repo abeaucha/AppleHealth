@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+source /Users/Antoine/Documents/Health/Data/.venv/bin/activate
+
+parse_health_xml.py
+
+deactivate
