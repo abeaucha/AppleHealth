@@ -14,13 +14,14 @@ Description
 
 import os
 import subprocess
+import sys
 import pandas as pd
 import xml.etree.ElementTree as ElementTree
 
 
 # Environment ----------------------------------------------------------------
 
-BASEDIR = '/Users/Antoine/Documents/Health/AppleHealth'
+BASEDIR = '/Users/Antoine/Documents/Health/AppleHealthDashboard/'
 
 
 # Modules --------------------------------------------------------------------
@@ -98,6 +99,7 @@ def main():
 
     :return:
     """
+
 
     # Output directory
     output_dir = os.path.join(BASEDIR, 'data')
