@@ -7,14 +7,18 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from shiny.express import render, ui
 
+# Get the app directory
+app_dir = os.path.dirname(__file__)
+
 # Data directory
 data_dir = 'data'
+data_dir = os.path.join(app_dir, data_dir)
 
 # Data file
 file = 'AppleHealth_BodyMass.csv'
 file = os.path.join(data_dir, file)
 if not os.path.exists(file):
-    raise ValueError
+    raise ValueError("File not found: {}".format(file))
 
 # Import data
 df_weight = pd.read_csv(file)
