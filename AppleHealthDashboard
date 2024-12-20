@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+# Path to app directory
+APP_DIR='/Users/Antoine/Documents/Health/AppleHealth/'
+
+# Add source dir to PATH
+PATH="$APP_DIR/src/:$PATH"
+
+# Activate python virtual environment
+source "$APP_DIR/.venv/bin/activate"
+
+# Parse Apple Health export
+parse_health_xml.py
+
+# Launch the app
+shiny run --reload --launch-browser $APP_DIR/app.py
+
+deactivate
