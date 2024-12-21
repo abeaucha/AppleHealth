@@ -66,16 +66,31 @@ def main():
     # Extract Apple Health export
     xml_file = extract_data_export(outdir = output_dir)
 
-    # Build weight data CSV
-    weight_file = utils.parse_weight_data(input_file = xml_file,
+    # Build body mass records CSV
+    weight_file = utils.parse_weight_records(input_file = xml_file,
                                           outdir = output_dir,
                                           prefix = output_prefix)
 
-    # record_types_all = [node.get('type') for node in health_root.iter('Record')]
+    # Build dietary records CSVs
+    # dietary_files = utils.parse_dietary_records(input_file = xml_file,
+    #                                             outdir = output_dir,
+    #                                             prefix = output_prefix)
 
-    # dietary_records = [record for record in ]
-    # dietary_types = [record for record in record_types_unique if 'Dietary' in record]
-    # dietary_types
+
+    # Records to parse:
+    # MindfulSession
+    # SleepAnalysis
+    # AppleExerciseTime
+    # AppleStandTime
+    # BasalEnergyBurned
+    # EnvironmentalAudioExposure
+    # HeartRate
+    # NumberOfAlcoholicBeverages
+    # RespiratoryRate
+    # RestingHeartRate
+    # StepCount
+    # VO2Max
+
 
     return
 
